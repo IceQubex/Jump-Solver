@@ -178,4 +178,7 @@ def jumpsolve_ids(start, goal, board):
             current = current_path[-1]
     return current_path
 
+def queue():
+    pass
+
 main()
