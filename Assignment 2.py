@@ -76,15 +76,19 @@ def jumpsolve_astar(start, goal, board):
         current = current_path[-1]
     return current_path
 
+#heuristic function for astar search
 def h_n(option, goal, board):
     return ((max(option[0],goal[0]) - min(option[0],goal[0])) + (max(option[1],goal[1]) - min(option[1],goal[1])))/(len(board))
 
+#calculating path cost for astar search
 def g_n(option_path):
     return (len(option_path)-1)
 
+#calculating the sum of heuristic function and path cost
 def f_n(option_path,goal,board):
     return g_n(option_path) + h_n(option_path[-1],goal,board)
 
+#implementation of breadth-first search
 def jumpsolve_bfs(start, goal, board):
     bfs_queue_list = list()
     current = start
@@ -127,6 +131,7 @@ def jumpsolve_bfs(start, goal, board):
         current = current_path[-1]
     return current_path
 
+#implementation of iterative depth search, starting with limit = 1
 def jumpsolve_ids(start, goal, board):
     ids_queue_list = list()
     current = start
@@ -180,7 +185,5 @@ def jumpsolve_ids(start, goal, board):
             current = current_path[-1]
     return current_path
 
-def queue():
-    pass
-
+#calling the main function to activate program
 main()
