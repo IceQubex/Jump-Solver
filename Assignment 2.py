@@ -1,3 +1,4 @@
+#main function receiving data about the puzzle
 def main():
     y = int(input("What is the length of the puzzle? "))
     x = int(input("What is the breadth of the puzzle? "))
@@ -24,6 +25,7 @@ def main():
     print("This is the IDS Solution: ")
     print(ids_solution)
 
+#astar search implementation
 def jumpsolve_astar(start, goal, board):
     astar_queue_list = list()
     current = start
